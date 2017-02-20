@@ -1,0 +1,29 @@
+<template name="List">
+	<article class="list {{#if inList}}in-list{{/if}}">
+		<h3>{{name}}</h3>
+
+		{{#if editMode}}
+			{{> quickForm collection="Lists" id=updateListId type="update" doc=this}}
+		{{else}}
+
+			<p>{{desc}}</p>
+			<p>
+				{{#each items}}
+					<span class="item">{{name}} - {{amount}}</span>
+				{{/each}}
+			</p>
+			<a href="/list/{{_id}}">View Details</a>
+
+		{{#if inList}}
+			<button class="btn-deny toggle-menu">Remove From Menu</button>
+		{{else}}
+			<button class="btn-primary toggle-menu">Add To Menu</button>
+		{{/if}}
+
+
+		{{/if}}
+
+		<i class="fa fa-pencil" ></i>
+		<i class="fa fa-trash" id="remove"></i>
+	</article>
+</template>

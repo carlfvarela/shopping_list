@@ -1,0 +1,16 @@
+<template name="Menu">
+	<h1 class="page-title">My Current List</h1>
+	{{#each lists}}
+		{{> MenuItem}}
+	{{else}}
+		<h3>Please add item to your list</h3>
+	{{/each}}
+</template>
+
+
+<template name="MenuItem">
+	<div class="list-item">
+		<h3>{{name}}</h3>
+		<p>{{desc}}</p>
+	</div>
+</template>
